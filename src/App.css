@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Asegúrate de que ocupen el 100% del ancho */
+  box-sizing: border-box; /* Muy importante para el modelo de caja */
+  overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+}
+
+/* Opcional: Aplicar box-sizing a todos los elementos */
+*, *::before, *::after {
+  box-sizing: inherit; /* Hereda box-sizing del html/body */
+}
+
+/* Asegúrate de que el div raíz de React (#root) también ocupe todo el espacio */
+#root {
+  height: 100%; /* Para problemas de altura, si los tuvieras aún */
+  width: 100%; /* Asegura que el root abarque el ancho */
+  display: flex; /* Si usas flexbox para el layout principal */
+  flex-direction: column; /* Si los componentes se apilan verticalmente */
+}
+
+/* Estilos globales para la fuente, etc. */
+body {
+  font-family: 'Arial', sans-serif; /* Tu fuente preferida */
+  -webkit-font-smoothing: antialiased; /* Para un texto más suave en Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale; /* Para un texto más suave en Firefox */
+}
