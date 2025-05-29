@@ -1,6 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { addToCart } from '../services/carrito';
+import "./productGird.css"
 
 function HeroSection() {
+    const [cantidad, setCantidad] = useState(1);
+    const [modalPersonalizarAbierto, setModalPersonalizarAbierto] = useState(false);
+    const [forma, setForma] = useState("");
+    const [sabor, setSabor] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!forma || !sabor) {
+      alert("Selecciona forma y sabor.");
+      return;
+    }
+
+    const paletaPersonalizada = {
+      user_id: 0,
+      quantity: cantidad,
+      paleta_id: null,
+      nombre: `Paleta personalizada ${forma} de ${sabor}`,
+      descripcion: "N/A",
+      ingredientes: sabor,
+      precio: 30,
+      imagen_url: `/static/images/${sabor}.jpg`,
+      tiene_oferta: false,
+      texto_oferta: null
+
+    };
+
+    await addToCart(paletaPersonalizada)// agrega al carrito como si fuera otra paleta
+    setModalPersonalizarAbierto(false);
+    setForma("");
+    setCantidad(1);
+    setSabor("");
+  };
   return (
     <section style={{
       backgroundColor: '#FFFEE1', // Color de fondo similar al Header
@@ -19,7 +54,7 @@ function HeroSection() {
       }}>
         Dulzura en cada mordida
       </h1>
-      <button style={{
+      <button onClick={() => setModalPersonalizarAbierto(true)} style={{
         fontFamily: 'Fredoka, sans-serif',
         backgroundColor: '#FA8CB1', // Rosa del botón
         color: 'white',
@@ -31,7 +66,7 @@ function HeroSection() {
         boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
         transition: 'background-color 0.3s ease'
       }}>
-        ¡Descúbrelas!
+        ¡Personaliza tu paleta!
       </button>
 
       {/* Flechas de navegación (simuladas, si fuera un carrusel) */}
@@ -59,6 +94,41 @@ function HeroSection() {
       }}>
         &gt;
       </div>
+      {modalPersonalizarAbierto && (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <button className="modal-close" onClick={() => setModalPersonalizarAbierto(false)}>&times;</button>
+          <h2>Personaliza tu Paleta</h2>
+
+          <form onSubmit={handleSubmit}>
+            <label>Forma:</label>
+            <select value={forma} onChange={(e) => setForma(e.target.value)}>
+              <option value="">Selecciona forma</option>
+              <option value="ternurin">Ternurín</option>
+              <option value="labubu">Labubu</option>
+              <option value="capibara">Capibara</option>
+            </select>
+
+            <label>Sabor:</label>
+            <select value={sabor} onChange={(e) => setSabor(e.target.value)}>
+              <option value="">Selecciona sabor</option>
+              <option value="mango">Mango</option>
+              <option value="uva">Uva</option>
+              <option value="fresa">Fresa</option>
+              <option value="yogurt">Yogurt</option>
+            </select>
+
+            <div className="quantity-selector">
+              <button onClick={() => setCantidad(Math.max(1, cantidad - 1))}>&laquo;</button>
+              <span>{cantidad}</span>
+              <button onClick={() => setCantidad(cantidad + 1)}>&raquo;</button>
+            </div>
+
+            <button type="submit" className="modal-button">Agregar al carrito</button>
+          </form>
+        </div>
+      </div>
+    )}
     </section>
   );
 }
