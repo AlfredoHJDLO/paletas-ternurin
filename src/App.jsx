@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components';
 import { Carrito } from './components/Carrito';
+import "./app.css"
 
 function App() {
   return (
