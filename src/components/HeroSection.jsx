@@ -3,15 +3,16 @@ import React from 'react';
 function HeroSection() {
   return (
     <section style={{
-      backgroundColor: '#fefdf7', // Color de fondo similar al Header
+      backgroundColor: '#FFFEE1', // Color de fondo similar al Header
       textAlign: 'center',
       padding: '80px 20px',
       position: 'relative',
       overflow: 'hidden'
     }}>
       <h1 style={{
-        fontSize: '60px', // Tamaño de fuente grande
-        color: '#c4978c', // Color marrón del texto
+        fontFamily: 'Fredoka, sans-serif',
+        fontSize: '96px', // Tamaño de fuente grande
+        color: '#9E6D4E', // Color marrón del texto
         margin: '0 auto 30px',
         maxWidth: '700px',
         lineHeight: '1.1'
@@ -19,7 +20,8 @@ function HeroSection() {
         Dulzura en cada mordida
       </h1>
       <button style={{
-        backgroundColor: '#f8b3c3', // Rosa del botón
+        fontFamily: 'Fredoka, sans-serif',
+        backgroundColor: '#FA8CB1', // Rosa del botón
         color: 'white',
         border: 'none',
         padding: '15px 30px',

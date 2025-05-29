@@ -20,8 +20,3 @@ html, body {
 }
 
 /* Estilos globales para la fuente, etc. */
-body {
-  font-family: 'Arial', sans-serif; /* Tu fuente preferida */
-  -webkit-font-smoothing: antialiased; /* Para un texto más suave en Safari/Chrome */
-  -moz-osx-font-smoothing: grayscale; /* Para un texto más suave en Firefox */
-}

@@ -10,20 +10,26 @@ function ProductCard({ imageSrc, name, price, hasOffer, offerText, onAddToCart }
   };
 
   const offerBadge = {
+    width: '80px',
+    height: '80px',
     position: 'absolute',
-    top: '10px',
-    right: '10px',
-    backgroundColor: '#f8b3c3', // Rosa de la oferta
+    top: '-20px',
+    right: '-20px',
+    backgroundColor: '#E94E77', // Rosa de la oferta
+    fontFamily: 'Quicksand, sans-serif',
+    fontSize: '24px',
     color: 'white',
     padding: '5px 10px',
-    borderRadius: '15px',
-    fontSize: '14px',
-    fontWeight: 'bold'
+    borderRadius: '40px',
+    fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   };
 
   const addButton = {
-    backgroundColor: '#f8b3c3', // Rosa del botón
-    color: 'white',
+    backgroundColor: '#F4EAD5', // Rosa del botón
+    color: '#9E6D4E',
     border: 'none',
     padding: '10px 20px',
     borderRadius: '20px',
@@ -33,12 +39,12 @@ function ProductCard({ imageSrc, name, price, hasOffer, offerText, onAddToCart }
     width: '80%', // Ajusta el ancho del botón
     maxWidth: '150px',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    transition: 'background-color 0.3s ease'
+    transition: 'background-color 0.3s ease',
   };
 
   return (
     <div style={{
-      backgroundColor: '#fefdf7', // Fondo de la tarjeta (blanco/claro)
+      backgroundColor: '#FDC5C9', // Fondo de la tarjeta (blanco/claro)
       borderRadius: '15px',
       boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
       padding: '20px',
@@ -55,10 +61,10 @@ function ProductCard({ imageSrc, name, price, hasOffer, offerText, onAddToCart }
     }}>
       {hasOffer && <div style={offerBadge}>{offerText}</div>}
       <img src={imageSrc} alt={name} style={paletaImage} />
-      <h3 style={{ fontSize: '18px', color: '#333', margin: '10px 0 5px' }}>
+      <h3 style={{ fontSize: '18px', color: '#9E6D4E', margin: '10px 0 5px' }}>
         {name}
       </h3>
-      <p style={{ fontSize: '16px', color: '#c4978c', fontWeight: 'bold', margin: '0 0 15px' }}>
+      <p style={{ fontSize: '16px', color: '#9E6D4E', fontWeight: 'bold', margin: '0 0 15px' }}>
         {price}
       </p>
       <button onClick={onAddToCart} style={addButton}>

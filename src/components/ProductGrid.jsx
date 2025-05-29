@@ -59,7 +59,7 @@ function ProductGrid() {
   return (
     <section id="productos" style={{
       padding: '40px 0',
-      backgroundColor: '#fefdf7', // Puedes ajustar el color de fondo aquí
+      backgroundColor: '#fff', // Puedes ajustar el color de fondo aquí
       color: '#333' // Ajusta el color del texto si cambias el fondo
     }}>
       <h2 style={{
