@@ -6,6 +6,9 @@ html, body {
   overflow-x: hidden; /* Evita el scroll horizontal no deseado */
 }
 
+main {
+  flex: 1;
+}
 /* Opcional: Aplicar box-sizing a todos los elementos */
 *, *::before, *::after {
   box-sizing: inherit; /* Hereda box-sizing del html/body */
@@ -15,6 +18,7 @@ html, body {
 #root {
   height: 100%; /* Para problemas de altura, si los tuvieras aún */
   width: 100%; /* Asegura que el root abarque el ancho */
+  min-height: 100vh;
   display: flex; /* Si usas flexbox para el layout principal */
   flex-direction: column; /* Si los componentes se apilan verticalmente */
 }

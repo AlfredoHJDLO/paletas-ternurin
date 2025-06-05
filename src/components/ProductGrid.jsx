@@ -39,7 +39,7 @@ function ProductGrid() {
 
   const handleAddToCart = async (paleta, cantidad) => {
     const datos = {
-      user_id: 0,
+      user_id: localStorage.getItem('Id'),
       quantity: cantidad,
       paleta_id: paleta.id,
       nombre: paleta.nombre,

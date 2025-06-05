@@ -6,7 +6,6 @@ function Footer() {
       backgroundColor: '#F4EAD5', // Color de fondo claro similar al header
       padding: '20px 40px',
       textAlign: 'center',
-      marginTop: '50px',
       //boxShadow: '0 -2px 4px rgba(0,0,0,0.05)'
     }}>
       <ul style={{
