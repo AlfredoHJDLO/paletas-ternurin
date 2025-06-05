@@ -84,6 +84,8 @@ function ProductGrid() {
         fontSize: '36px',
         color: '#c4978c',
         textAlign: 'center',
+        fontFamily: 'Fredoka',
+        fontWeight: '400',
         marginBottom: '40px'
       }}>
         Nuestros Productos

@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <footer style={{
-      backgroundColor: '#fefdf7', // Color de fondo claro similar al header
+      backgroundColor: '#F4EAD5', // Color de fondo claro similar al header
       padding: '20px 40px',
       textAlign: 'center',
       marginTop: '50px',
@@ -18,11 +18,11 @@ function Footer() {
         gap: '30px',
         flexWrap: 'wrap' // Para responsividad en pantallas pequeñas
       }}>
-        <li><a href="#privacidad" style={{ textDecoration: 'none', color: '#888', fontSize: '14px' }}>Aviso de privacidad</a></li>
-        <li><a href="#terminos" style={{ textDecoration: 'none', color: '#888', fontSize: '14px' }}>Términos</a></li>
-        <li><a href="#preguntas" style={{ textDecoration: 'none', color: '#888', fontSize: '14px' }}>Preguntas Frecuentes</a></li>
+        <li><a href="#privacidad" style={{ textDecoration: 'none', fontFamily: 'Quicksand', color: '#9E6D4E', fontSize: '20px', fontWeight: '700' }}>Aviso de privacidad</a></li>
+        <li><a href="#terminos" style={{ textDecoration: 'none', fontFamily: 'Quicksand', color: '#9E6D4E', fontSize: '20px', fontWeight: '700' }}>Términos</a></li>
+        <li><a href="#preguntas" style={{ textDecoration: 'none', fontFamily: 'Quicksand', color: '#9E6D4E', fontSize: '20px', fontWeight: '700' }}>Preguntas Frecuentes</a></li>
       </ul>
-      <p style={{ color: '#aaa', fontSize: '12px', marginTop: '15px' }}>
+      <p style={{ color: '#777', fontSize: '14px', marginTop: '12px' }}>
         © 2025 Ternurin. Todos los derechos reservados.
       </p>
     </footer>
