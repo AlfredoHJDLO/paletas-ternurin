@@ -68,7 +68,8 @@ export function Admin() {
     return (
         <>
             <div className="contenedorAdmin">
-                <button onClick={() => {setModal(true)}}>Agregar</button>
+                <h1>Bienvenido {localStorage.getItem('user')}</h1>
+                <button className="boton-rosa" onClick={() => {setModal(true)}}>Agregar</button>
                 {paletas.length > 0 ? (
                     paletas.map((item, index) => (
                         <div key={index} className="productosC">
@@ -84,12 +85,11 @@ export function Admin() {
 
                                 <div className="carrito-card-body">
                                     <button
-                                        className="eliminar-btn"
+                                        className="actualizar-btn"
                                         onClick={() => { setPaletaSeleccionada(item); setModalA(true) }}
                                     >
                                         Actualizar
                                     </button>
-                                    <span className="subtotal">Subtotal: ${(item.precio * item.quantity).toFixed(2)}</span>
                                 </div>
 
                                 <button
@@ -113,7 +113,7 @@ export function Admin() {
                             &times;
                         </button>
                         <h2>Actualizar paleta</h2>
-                        <img src={`${API_BASE_URL}${paletaSeleccionada.imagen_url}`} alt="" style={{ width: '100%', borderRadius: '8px', margin: '16px 0' }} />
+                        <img src={`${API_BASE_URL}${paletaSeleccionada.imagen_url}`} alt="" style={{ width: '100%', borderRadius: '8px', margin: '16px 0', aspectRatio: '1', objectFit: 'cover' }} />
                         <input
                             type="text"
                             value={paletaSeleccionada.nombre}
@@ -175,7 +175,7 @@ export function Admin() {
                         <button className="modal-close" onClick={() => setModal(false)}>
                             &times;
                         </button>
-                        <h2>Actualizar paleta</h2>
+                        <h2>Agregar paleta</h2>
                         <input
                             type="text"
                             value={nombre}

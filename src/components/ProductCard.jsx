@@ -59,7 +59,7 @@ function ProductCard({ imageSrc, name, price, hasOffer, offerText, onAddToCart }
       flex: '1 1 calc(25% - 20px)', // Para que se ajusten en la rejilla (4 por fila - margen)
       maxWidth: '280px' // Limita el ancho máximo de la tarjeta
     }}>
-      {hasOffer && <div style={offerBadge}>{offerText}</div>}
+      {/*hasOffer && <div style={offerBadge}>{offerText}</div>*/}
       <img src={imageSrc} alt={name} style={paletaImage} />
       <h3 style={{ fontSize: '18px', color: '#9E6D4E', margin: '10px 0 5px' }}>
         {name}

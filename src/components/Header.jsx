@@ -11,7 +11,7 @@ function Header() {
     localStorage.removeItem('Id');
     localStorage.removeItem('type');
     localStorage.removeItem('user')
-    window.location.reload();
+    navigate('/');
   };
 
   return (

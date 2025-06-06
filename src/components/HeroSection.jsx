@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import { addToCart } from '../services/carrito';
 import "./productGird.css"
+import { useNavigate } from 'react-router-dom';
 
 function HeroSection() {
     const [cantidad, setCantidad] = useState(1);
     const [modalPersonalizarAbierto, setModalPersonalizarAbierto] = useState(false);
     const [forma, setForma] = useState("");
     const [sabor, setSabor] = useState("");
+    const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    if (localStorage.getItem('Id') === null){
+      navigate('/login')
+    }
     e.preventDefault();
 
     if (!forma || !sabor) {

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'; // Importa useState y useEff
 import ProductCard from './ProductCard';
 import { addToCart } from '../services/carrito';
 import "./productGird.css"
+import { useNavigate } from 'react-router-dom';
 
 function ProductGrid() {
   const [paletas, setPaletas] = useState([]); // Estado para almacenar las paletas
@@ -11,6 +12,7 @@ function ProductGrid() {
   const [error, setError] = useState(null); // Estado para manejar errores
   const [paletaSeleccionada, setPaletaSeleccionada] = useState(null);
   const [cantidad, setCantidad] = useState(1);
+  const navigate = useNavigate();
 
 
   // URL base de tu API de FastAPI
@@ -38,6 +40,9 @@ function ProductGrid() {
   }, []); // El array vacío de dependencias [] asegura que useEffect se ejecute solo una vez al montar
 
   const handleAddToCart = async (paleta, cantidad) => {
+    if (localStorage.getItem('Id') === null){
+      navigate('/login')
+    }
     const datos = {
       user_id: localStorage.getItem('Id'),
       quantity: cantidad,

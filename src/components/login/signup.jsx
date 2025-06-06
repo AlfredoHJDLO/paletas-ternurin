@@ -54,8 +54,8 @@ export function Signup() {
                     <div><input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required placeholder="Username" /></div>
                     <div><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="Email" /></div>
                     <div><input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="Password" /></div>
-                    <a href="">Registrate aqui</a>
-                    <button onClick={handleLogin}>Login</button>
+                    <a className="a" onClick={() => navigate('/login')}>Iniciar sesion</a>
+                    <button className="button" onClick={handleLogin}>Registrarse</button>
                 </div>
             </div>
         </>

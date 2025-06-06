@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { addOrder, deleteC, deleteE, getCarrito } from "../services/carrito";
 import "./carrito.css"
+import { useNavigate } from "react-router-dom";
 
 export function Carrito() {
     const [carrito, setCarrito] = useState([]);
@@ -8,6 +9,11 @@ export function Carrito() {
 
     const id_user = localStorage.getItem('Id');
     const API_BASE_URL = "http://localhost:8000";
+    const navigate = useNavigate();
+
+    if (id_user === null){
+        navigate('/login')
+    }
 
     useEffect(() => {
         const cargarCarrito = async () => {
@@ -69,13 +75,13 @@ export function Carrito() {
                 )}
 
                 {carrito.length > 0 && (
-                    <div style={{ marginTop: '20px', fontWeight: 'bold' }}>
+                    <div style={{ marginTop: '20px', fontWeight: 'bold', display:'flex', alignItems:'center', justifyContent:'space-between', fontFamily:"Arial" }}>
                         Total: $
                         {carrito.reduce(
                             (total, item) => total + item.precio * item.quantity,
                             0
                         )}
-                        <button onClick={()=> {comprar(id_user)}}>Comprar</button>
+                        <button className="boton-rosa" onClick={()=> {comprar(id_user)}}>Comprar</button>
                     </div>
                 )}
             </div>
