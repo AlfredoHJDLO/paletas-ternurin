@@ -1,0 +1,36 @@
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #E94E77;
+}
+
+.faq-question h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.faq-answer {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-answer p {
+  margin: 0;
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 1rem;
+}

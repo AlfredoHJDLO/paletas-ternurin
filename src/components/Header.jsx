@@ -20,28 +20,28 @@ function Header() {
         Ternurin
       </div>
       <nav>
-        <ul style={{
+        <ul className='ul1' style={{
           listStyle: 'none',
           margin: 0,
           padding: 0,
           display: 'flex',
           gap: '30px'
         }}>
-          <li ><Link to="/" className="ah">Inicio</Link></li>
-          <li><a className="ah" href="#productos" >Productos</a></li>
-          <li><a className="ah" href="#nosotros" >Sobre Nosotros</a></li>
-          <li><a className="ah" href="#contacto" >Contacto</a></li>
+          <li className='li1'><Link to="/" className="ah">Inicio</Link></li>
+          <li className='li1'><a className="ah" href="#productos" >Productos</a></li>
+          <li className='li1'><Link to="/nosotros" className="ah">Sobre nosotros</Link></li>
+          <li className='li1'><Link to="/contacto" className="ah">Contacto</Link></li>
           {localStorage.getItem('Id') !== null ? (
-            <li className="dropdown">
+            <li className="dropdown li1">
             <span>{localStorage.getItem('user')} ▾</span>
-            <ul className="dropdown-menu">
-              <li>Mi cuenta</li>
-              <li><Link to='/pedidos' className="ah">Mis pedidos</Link></li>
-              <li onClick={logout}>Cerrar sesión</li>
+            <ul className="dropdown-menu ul1">
+              <li className='li1'>Mi cuenta</li>
+              <li className='li1'><Link to='/pedidos' className="ah">Mis pedidos</Link></li>
+              <li className='li1' onClick={logout}>Cerrar sesión</li>
             </ul>
           </li>
           ):
-          (<li><Link to='/login'>Iniciar sesion</Link></li>)}
+          (<li className='li1'><Link to='/login'>Iniciar sesion</Link></li>)}
           
         </ul>
       </nav>

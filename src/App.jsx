@@ -8,6 +8,11 @@ import "./App.css"
 import { Admin } from './components/admin/admin';
 import { Signup } from './components/login/signup';
 import { Pedido } from './components/Pedido';
+import Nosotros from './components/nosotros';
+import Contacto from './components/contacto';
+import FaqSection from './components/faqs/FaqsSection';
+import Terminos from './components/Terminos/terminos';
+import Privacidad from './components/Terminos/Privacidad';
 
 function App() {
   return (
@@ -23,6 +28,11 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path='/' element={<HomePage />} />
           <Route path='/carrito' element={<Carrito />} />
+          <Route path='/nosotros' element={<Nosotros />} />
+          <Route path='/contacto' element={<Contacto />} />
+          <Route path='/faqs' element={<FaqSection />} />
+          <Route path='/terminos' element={<Terminos />} />
+          <Route path='/privacidad' element={<Privacidad />} />
           <Route path='/pedidos' element={<Pedido />} />
         </Route>
 

@@ -1,0 +1,23 @@
+.legal-section {
+  padding: 40px;
+  background-color: #fff6f9;
+  color: #333;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.legal-section h2 {
+  font-size: 2rem;
+  color: #e94e77;
+  margin-bottom: 1rem;
+}
+
+.legal-section ul {
+  padding-left: 1.5rem;
+}
+
+.legal-section ul li {
+  margin-bottom: 0.5rem;
+}
