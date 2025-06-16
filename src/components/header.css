@@ -1,37 +1,45 @@
+/* --- TUS ESTILOS ORIGINALES (con pequeños ajustes) --- */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #F4EAD5;
-    font-family: Quicksand, sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #F4EAD5;
+  font-family: Quicksand, sans-serif;
+  position: relative;
+  /* Necesario para el menú móvil */
 }
 
 .title {
-    font-family: Fredoka, sans-serif;
-    font-size: 3rem;
-    font-weight: bold;
-    color: #E94E77;
+  font-family: Fredoka, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #E94E77;
+  z-index: 101;
+  /* Para que esté sobre el menú móvil */
 }
 
-.ul1{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 30px;
+.ul1 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  /* Alineación vertical */
 }
 
-.li1, .ah {
-    text-decoration: none;
-    font-weight: 700;
-    color: #9E6D4E;
-    font-size: 24px;
-    padding: 0;
+.li1,
+.ah {
+  text-decoration: none;
+  font-weight: 700;
+  color: #9E6D4E;
+  font-size: 24px;
+  padding: 0;
 }
 
 .dropdown {
-  position: relative; /* Para posicionar el menú respecto a este elemento */
+  position: relative;
   cursor: pointer;
 }
 
@@ -59,4 +67,75 @@ header {
 
 .dropdown-menu li:hover {
   background-color: #f0f0f0;
+}
+
+.carrito-container img {
+  height: 64px;
+}
+
+/* Ocultar el botón de hamburguesa en escritorio */
+.menu-hamburguesa {
+  display: none;
+  font-size: 2.5rem;
+  color: #9E6D4E;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* --- ESTILOS RESPONSIVOS PARA MÓVILES --- */
+@media (max-width: 1104px) {
+
+  /* Mostrar el botón de hamburguesa y ocultar el carrito que está junto a la nav */
+  .menu-hamburguesa {
+    display: block;
+    z-index: 101;
+    /* Para que esté sobre el menú */
+    margin-left: auto;
+    margin-right: 24px;
+  }
+
+  /* Ocultar la navegación de escritorio */
+  nav {
+    display: none;
+  }
+
+  /* Estilos para el contenedor de la navegación cuando está abierto */
+  nav.nav-abierto {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    background-color: #F4EAD5;
+    z-index: 100;
+  }
+
+  /* El menú de navegación se vuelve vertical */
+  nav.nav-abierto .ul1 {
+    flex-direction: column;
+    justify-content: center;
+    /* Centra los items verticalmente */
+    align-items: center;
+    /* Centra los items horizontalmente */
+    width: 100%;
+    height: 100%;
+    gap: 40px;
+    /* Aumentamos el espacio */
+  }
+
+  /* El dropdown en móvil también debe ser vertical */
+  nav.nav-abierto .dropdown-menu {
+    position: static;
+    /* Quitamos el posicionamiento absoluto */
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    box-shadow: none;
+    padding-top: 20px;
+    gap: 20px;
+  }
 }
