@@ -56,7 +56,7 @@ export default function Nosotros() {
                             </p>
 
                             <div>
-                            <img src={img1} alt="Paletas" style={{width: '100%'}} />
+                            <img src={img1} alt="Paletas" style={{width: '50%', height: '280px', objectFit: 'cover'}} />
                         </div>
                         </div>
                     </div>
